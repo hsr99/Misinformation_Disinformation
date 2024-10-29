@@ -1,6 +1,4 @@
-Here's a fitting GitHub README template for your multimodal misinformation and disinformation detection project:
 
----
 
 # MULTImodal Misinformation & Disinformation Detection and Verification
 
@@ -71,6 +69,3 @@ Contributions are welcome! If you have suggestions for improvements or would lik
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-Feel free to modify any sections to better fit your project specifics or preferences! Let me know if you need any additional sections or information included.
