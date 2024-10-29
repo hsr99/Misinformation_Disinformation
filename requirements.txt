@@ -1,0 +1,9 @@
+torch
+transformers
+moviepy
+larq
+tensorflow
+opencv-python
+Pillow
+numpy
+scikit-learn
