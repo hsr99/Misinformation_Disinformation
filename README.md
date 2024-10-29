@@ -1,8 +1,15 @@
 # Misinformation_Disinformation
 MULTImodal Fake News Detection and Verification 
 
-Our cutting-edge project decisively tackles the pervasive challenge of misinformation in today's digital landscape. We deploy state-of-the-art AI tools and advanced large language models to detect and categorize misleading content across various media formats—including videos, audios, images, and text. By meticulously curating expansive datasets and developing sophisticated deep learning (DL) models in NLP and computer vision, we have pioneered a robust, multimodal approach.
+Dataset Description: MULTI-Fake-DetectiVE is a comprehensive dataset specifically curated to detect fake news and misleading information in the context of the Ukrainian-Russian war, which began in February 2022. Recognizing the increased dissemination of fake news since the early stages of this conflict, this dataset provides researchers and developers with a diverse collection of real-world media content, enabling them to advance the field of fake news detection in complex social and geopolitical contexts.
 
-Our primary goal is to achieve unparalleled accuracy in detecting misinformation. Leveraging multimodal analysis and real-time parallel processing capabilities, we ensure the swift and precise identification of deceptive content. This innovative solution not only addresses the complexities of today's digital misinformation but also sets a new industry standard in combating falsehoods, fostering a more informed and trustworthy online environment.
+In this project, we tackle the challenge of identifying misinformation by utilizing textual and visual data from tweets. This solution is based on two main components:
+  ->A text encoder using the DeBERTaV3 Large model.
+  ->An image encoder using DenseNet-121 for robust feature extraction.
+These two embeddings are then passed through a Transformer encoder for feature fusion and later classified into the target classes.
 
-With our deep learning approach, we are at the forefront of technological advancement, offering a comprehensive solution that embodies both cutting-edge research and practical application.
+Install the dependencies using pip install -r requirements.txt
+
+Usage
+Set CUDA for Debugging: %env CUDA_LAUNCH_BLOCKING=1
+Train the Model: Run the training loop using the main script.
