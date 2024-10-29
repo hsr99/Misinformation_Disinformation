@@ -19,6 +19,9 @@
 
 The dataset utilized for this project is **MULTI-Fake-DetectiVE**, specifically curated to detect fake news and misleading information related to the Ukrainian-Russian war, which began in February 2022. This dataset comprises a diverse collection of real-world media content, enabling researchers and developers to advance the field of fake news detection in complex social and geopolitical contexts. It includes a range of formats, such as tweets, images, videos, and associated metadata, to provide a robust training foundation for multimodal analysis.
 
+[Data Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
+
+
 ## Project Structure
 
 ```
