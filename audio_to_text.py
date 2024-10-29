@@ -1,7 +1,12 @@
 import cv2
 import pytesseract
 
-video_path = "Test_vide0.mp4"
+def remove_redundant_lines(text):
+    # Split text into lines and remove duplicates while preserving order
+    unique_lines = list(dict.fromkeys(text.splitlines()))
+    
+    # Join the unique lines back into a single string with appropriate spacing
+    return '\n'.join(unique_lines)
 
 def video_extract(video_path):
     cap = cv2.VideoCapture(video_path)
@@ -9,7 +14,7 @@ def video_extract(video_path):
     previous_frame = None
     keyframe_texts = []
     frame_number = 0
-    keyframe_interval = 30  # Adjust as needed to capture key changes
+    keyframe_interval = 40  # Adjust as needed to capture key changes
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -22,8 +27,9 @@ def video_extract(video_path):
         # Check if the frame is significantly different from the previous keyframe
         if previous_frame is None or cv2.norm(previous_frame, gray_frame, cv2.NORM_L2) > 1000:  # Adjust threshold as needed
             # Extract text from the keyframe
-            text = pytesseract.image_to_string(frame)
-            keyframe_texts.append((frame_number, text))
+            text = pytesseract.image_to_string(frame).strip()
+            if text:  # Only add non-empty text
+                keyframe_texts.append(text)
             
             # Update previous frame to the current frame
             previous_frame = gray_frame
@@ -33,9 +39,11 @@ def video_extract(video_path):
 
     # Release the video capture object
     cap.release()
+    
+    # Join all extracted texts and remove duplicates
+    combined_text = '\n'.join(keyframe_texts)  # Combine texts with double newline for readability
+    cleaned_text = remove_redundant_lines(combined_text)  # Clean the text to remove duplicates
 
-    # Display or store the extracted text from keyframes
-    for frame_num, text in keyframe_texts:
-        print(f"Keyframe {frame_num}: {text}\n")
-        
-     
+    return cleaned_text
+
+print(video_extract('Test_video.mp4'))
