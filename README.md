@@ -1,15 +1,76 @@
-# Misinformation_Disinformation
-MULTImodal Fake News Detection and Verification 
+Here's a fitting GitHub README template for your multimodal misinformation and disinformation detection project:
 
-Dataset Description: MULTI-Fake-DetectiVE is a comprehensive dataset specifically curated to detect fake news and misleading information in the context of the Ukrainian-Russian war, which began in February 2022. Recognizing the increased dissemination of fake news since the early stages of this conflict, this dataset provides researchers and developers with a diverse collection of real-world media content, enabling them to advance the field of fake news detection in complex social and geopolitical contexts.
+---
 
-In this project, we tackle the challenge of identifying misinformation by utilizing textual and visual data from tweets. This solution is based on two main components:
-  ->A text encoder using the DeBERTaV3 Large model.
-  ->An image encoder using DenseNet-121 for robust feature extraction.
-These two embeddings are then passed through a Transformer encoder for feature fusion and later classified into the target classes.
+# MULTImodal Misinformation & Disinformation Detection and Verification
 
-Install the dependencies using pip install -r requirements.txt
+## Overview
 
-Usage
-Set CUDA for Debugging: %env CUDA_LAUNCH_BLOCKING=1
-Train the Model: Run the training loop using the main script.
+MULTImodal Misinformation & Disinformation Detection and Verification is a comprehensive project aimed at detecting and verifying fake news using multiple data sources, including text, images, audio, and video. This project leverages advanced machine learning techniques to identify misinformation, especially in the context of the ongoing Ukrainian-Russian war.
+
+## Technologies Used
+
+- **PyTorch**: For building and training neural networks.
+- **Transformers**: Utilizing the DeBERTaV3 model for text processing.
+- **OpenCV**: For image and video processing.
+- **PyTesseract**: For optical character recognition (OCR).
+- **TorchVision**: For image transformation and pre-trained models.
+- **Pandas**: For data manipulation and analysis.
+- **Scikit-learn**: For performance evaluation metrics.
+
+## Dataset
+
+The dataset used for this project is **MULTI-Fake-DetectiVE**, specifically curated to detect fake news and misleading information related to the Ukrainian-Russian war, which began in February 2022. It provides a diverse collection of real-world media content, enabling researchers and developers to advance the field of fake news detection in complex social and geopolitical contexts.
+
+## Project Structure
+
+```
+multimodal-fake-news-detection/
+├── backend/
+│   ├── model.py
+│   ├── utils.py
+│   ├── requirements.txt
+├── frontend/
+│   ├── app.py
+│   ├── static/
+│   ├── templates/
+└── README.md
+```
+
+- **backend/**: Contains the model architecture, utility functions, and dependencies.
+- **frontend/**: Contains the Streamlit application for user interaction.
+
+## How It Works
+
+1. **Frontend**: Users provide inputs through the Streamlit interface.
+2. **Backend Model**: The provided inputs are processed by our trained models:
+   - **Text Encoder**: Utilizes DeBERTaV3 for processing textual data.
+   - **Image Encoder**: Uses DenseNet-121 for image feature extraction.
+   - **Multimodal Fusion**: Combines features from text and images using a Transformer model.
+   - **Deepfake Detection**: An additional module for detecting deepfake content.
+3. **Output Rendering**: The results are rendered back to the main page, providing users with insights on misinformation.
+
+## Training
+
+To train the model, execute the following commands in your terminal:
+
+```bash
+pip install -r backend/requirements.txt
+python backend/model.py
+```
+
+## Evaluation
+
+The model's performance is evaluated using accuracy, F1 score, and other relevant metrics. You can find detailed training logs and evaluation reports in the output generated during training.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or would like to report issues, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to modify any sections to better fit your project specifics or preferences! Let me know if you need any additional sections or information included.
