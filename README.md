@@ -26,7 +26,6 @@ The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—bett
 
 ## Project Structure
 
-```
 - **src/**: Contains the utility functions, training scripts, and dependencies required to run the final model.
 - **frontend/**: Contains the Streamlit application that allows users to interact with the model and view results.
 - **baseline models/**: These are the two best models we trained, out of which baseline 1 is the better.
