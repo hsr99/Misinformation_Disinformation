@@ -27,21 +27,9 @@ The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—bett
 ## Project Structure
 
 ```
-multimodal-fake-news-detection/
-├── backend/
-│   ├── model.py              # Model architecture and training scripts
-│   ├── utils.py              # Utility functions for data preprocessing and model evaluation
-│   ├── requirements.txt      # Dependencies for backend
-│   └── train.py              # Script to train the model
-├── frontend/
-│   ├── app.py                # Streamlit application for user interaction
-│   ├── static/               # Static files (images, CSS, etc.)
-│   ├── templates/            # HTML templates for rendering output
-└── README.md                 # Project documentation
-```
-
-- **backend/**: Contains the model architecture, utility functions, training scripts, and dependencies required to run the model.
+- **src/**: Contains the utility functions, training scripts, and dependencies required to run the final model.
 - **frontend/**: Contains the Streamlit application that allows users to interact with the model and view results.
+- **baseline models/**: These are the two best models we trained, out of which baseline 1 is the better.
 
 ## How the Baseline_Code1 Works 
 
@@ -51,7 +39,8 @@ multimodal-fake-news-detection/
    - **Image Encoder**: Implements DenseNet-121 for robust feature extraction from images, identifying relevant visual cues.
    - **Multimodal Fusion**: Combines features from both text and images using a Transformer model, enhancing the model's ability to understand context.
    - **Deepfake Detection**: An additional module that employs advanced techniques to identify manipulated video content.
-3. **Output Rendering**: The results are rendered back to the main page, providing users with insights on the likelihood of misinformation, along with contextual explanations and confidence scores.
+   Additionally, we have functionalities to extract text and images from videos and identify their Realness by passing them to the above models/Encoders. This is a future scope that can be worked on further.
+3. **Output Rendering**: The results are returned to the main page, providing users with insights on the likelihood of misinformation, contextual explanations, and confidence scores.
 
 ## Training
 
@@ -66,7 +55,7 @@ python backend/train.py
 
 ## Evaluation
 
-The model's performance is evaluated using various metrics, including accuracy, F1 score, precision, and recall. Detailed training logs and evaluation reports will be generated during the training process and can be found in the directory specified in `train.py`. Comprehensive classification reports are also available to assess the effectiveness of the model across different classes.
+The model's performance is evaluated using various metrics, including accuracy, F1 score, precision, and recall. Detailed training logs and evaluation reports will be generated during the training process. Comprehensive classification reports are also available to assess the effectiveness of the model across different classes.
 
 The Baseline_Code1 Model has reached a high accuracy of 70.77% which is the best compared to models released across the internet trained on the same dataset. The below link compares the best models trained on this dataset.
 [Data Source](https://ceur-ws.org/Vol-3473/paper33.pdf)
