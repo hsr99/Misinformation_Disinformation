@@ -19,6 +19,8 @@
 
 The dataset utilized for this project is **MULTI-Fake-DetectiVE**, specifically curated to detect fake news and misleading information related to the Ukrainian-Russian war, which began in February 2022. This dataset comprises a diverse collection of real-world media content, enabling researchers and developers to advance the field of fake news detection in complex social and geopolitical contexts. It includes a range of formats, such as tweets, images, videos, and associated metadata, to provide a robust training foundation for multimodal analysis.
 
+The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—better reflect real-world misinformation challenges than a simple Real/Fake split. This classification helps the model understand varying levels of credibility, making it more effective at identifying not just clear falsehoods but also content with ambiguity. This approach supports more accurate and practical misinformation detection for real-world combat related applications.
+
 [Data Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
 
 
@@ -41,7 +43,7 @@ multimodal-fake-news-detection/
 - **backend/**: Contains the model architecture, utility functions, training scripts, and dependencies required to run the model.
 - **frontend/**: Contains the Streamlit application that allows users to interact with the model and view results.
 
-## How It Works
+## How the Baseline_Code1 Works 
 
 1. **Frontend**: Users provide inputs through a user-friendly Streamlit interface, uploading media content (text, images, audio, or video) for analysis.
 2. **Backend Model**: The provided inputs are processed by our trained models:
@@ -64,7 +66,10 @@ python backend/train.py
 
 ## Evaluation
 
-The model's performance is evaluated using various metrics, including accuracy, F1 score, precision, and recall. Detailed training logs and evaluation reports will be generated during the training process and can be found in the output directory specified in `train.py`. Comprehensive classification reports are also available to assess the effectiveness of the model across different classes.
+The model's performance is evaluated using various metrics, including accuracy, F1 score, precision, and recall. Detailed training logs and evaluation reports will be generated during the training process and can be found in the directory specified in `train.py`. Comprehensive classification reports are also available to assess the effectiveness of the model across different classes.
+
+The Baseline_Code1 Model has reached a high accuracy of 70.77% which is the best compared to models released across the internet trained on the same dataset. The below link compares the best models trained on this dataset.
+[Data Source](https://ceur-ws.org/Vol-3473/paper33.pdf)
 
 ## Contributing
 
