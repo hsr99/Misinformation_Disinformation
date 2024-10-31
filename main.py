@@ -1,8 +1,8 @@
 import json
-from backend.text_extraction import extract_text_from_video
-from backend.face_extraction import extract_faces_from_video
-from backend.deepfake_model import create_bnn_model
-from backend.utils import preprocess_video_frames
+from src.text_extraction import extract_text_from_video
+from src.face_extraction import extract_faces_from_video
+from src.deepfake_model import create_bnn_model
+from src.utils import preprocess_video_frames
 from config.settings import VIDEO_PATH
 
 def run_pipeline(video_path):
