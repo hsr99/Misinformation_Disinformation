@@ -7,8 +7,8 @@
 
 ## Technologies Used
 
-- **PyTorch**: For building and training neural networks, enabling efficient computation on both CPU and GPU.
-- **Transformers**: Utilizing the DeBERTaV3 model for text processing, enhancing understanding of context and semantics in language.
+- **PyTorch**: This tool is for building and training neural networks, enabling efficient computation on both CPU and GPU.
+- **Transformers**: Utilizes the DeBERTaV3 model for text processing, enhancing understanding of context and semantics in language.
 - **OpenCV**: For image and video processing, facilitating tasks such as frame extraction and manipulation.
 - **PyTesseract**: For optical character recognition (OCR), allowing the extraction of text from images.
 - **TorchVision**: For image transformation and utilizing pre-trained models to improve feature extraction.
@@ -19,7 +19,7 @@
 
 The dataset utilized for this project is **MULTI-Fake-DetectiVE**, specifically curated to detect fake news and misleading information related to the Ukrainian-Russian war, which began in February 2022. This dataset comprises a diverse collection of real-world media content, enabling researchers and developers to advance the field of fake news detection in complex social and geopolitical contexts. It includes a range of formats, such as tweets, images, videos, and associated metadata, to provide a robust training foundation for multimodal analysis.
 
-The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—better reflect real-world misinformation challenges than a simple Real/Fake split. This classification helps the model understand varying levels of credibility, making it more effective at identifying not just clear falsehoods but also content with ambiguity. This approach supports more accurate and practical misinformation detection for real-world combat related applications.
+The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—better reflect real-world misinformation challenges than a simple Real/Fake split. This classification helps the model understand varying levels of credibility, making it more effective at identifying not just clear falsehoods but also content with ambiguity. This approach supports more accurate and practical misinformation detection for real-world combat-related applications.
 
 [Data Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
 
@@ -74,10 +74,8 @@ To train the model, execute the following commands in your terminal:
 
 ```bash
 pip install -r backend/requirements.txt
-python backend/train.py
+python baseline models/<choose the baseline model you want>
 ```
-
-- Adjust parameters in `train.py` to modify training epochs, batch size, and learning rates based on your system’s capabilities.
 
 ## Evaluation
 
@@ -88,7 +86,7 @@ The Baseline_Code1 Model has reached a high accuracy of 70.77% which is the best
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for improvements, new features, or wish to report issues, please open an issue or submit a pull request. We encourage collaborative efforts to enhance the project's capabilities and reach.
+Contributions are welcome! If you have suggestions for improvements, or new features, or wish to report issues, please open an issue or submit a pull request. We encourage collaborative efforts to enhance the project's capabilities and reach.
 
 ## License
 
