@@ -3,99 +3,72 @@
 
 ## Overview
 
-**MULTImodal Misinformation & Disinformation Detection and Verification** is an innovative project aimed at detecting and verifying fake news by analyzing multiple data sources—text, images, audio, and video. Designed with advanced machine learning techniques, this project targets misinformation in complex situations like the ongoing Ukrainian-Russian conflict, emphasizing the critical role of factual information in today’s digital world.
+**MULTImodal Misinformation & Disinformation Detection and Verification** is a comprehensive project aimed at detecting and verifying fake news using multiple data sources, including text, images, audio, and video. This initiative leverages advanced machine learning techniques to identify and combat misinformation, particularly in the complex and dynamic context of the ongoing Ukrainian-Russian war. The project emphasizes the importance of reliable information in today's digital age, where misinformation can have serious consequences.
 
 ## Technologies Used
 
-- **PyTorch**: Powers neural network creation and training, supporting both CPU and GPU-based computation.
-- **Transformers (DeBERTaV3)**: Processes text data, capturing intricate nuances in language and sentiment.
-- **OpenCV**: Facilitates image and video processing, including frame extraction and analysis.
-- **PyTesseract**: Provides optical character recognition (OCR) for extracting text from images.
-- **TorchVision**: Offers image transformation and feature extraction capabilities with pre-trained models.
-- **Pandas**: Manages data manipulation, essential for preprocessing and handling large datasets.
-- **Scikit-learn**: Provides metrics for evaluating model performance, ensuring accuracy and reliability.
+- **PyTorch**: For building and training neural networks, enabling efficient computation on both CPU and GPU.
+- **Transformers**: Utilizing the DeBERTaV3 model for text processing, enhancing understanding of context and semantics in language.
+- **OpenCV**: For image and video processing, facilitating tasks such as frame extraction and manipulation.
+- **PyTesseract**: For optical character recognition (OCR), allowing the extraction of text from images.
+- **TorchVision**: For image transformation and utilizing pre-trained models to improve feature extraction.
+- **Pandas**: For data manipulation and analysis, essential for preprocessing and handling large datasets.
+- **Scikit-learn**: For performance evaluation metrics, ensuring rigorous assessment of model accuracy and effectiveness.
 
 ## Dataset
 
-The **MULTI-Fake-DetectiVE** dataset is specially curated to detect fake news and misleading information related to the Ukrainian-Russian conflict. It includes diverse media formats (e.g., tweets, images, videos) and metadata, enabling comprehensive multimodal analysis. Classes in the dataset—Fake, Real, Probably Fake, Probably Real—allow the model to assess credibility on a nuanced scale, making it adept at identifying both clear falsehoods and ambiguous information.
+The dataset utilized for this project is **MULTI-Fake-DetectiVE**, specifically curated to detect fake news and misleading information related to the Ukrainian-Russian war, which began in February 2022. This dataset comprises a diverse collection of real-world media content, enabling researchers and developers to advance the field of fake news detection in complex social and geopolitical contexts. It includes a range of formats, such as tweets, images, videos, and associated metadata, to provide a robust training foundation for multimodal analysis.
 
-[Dataset Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
+The dataset's four classes—Fake, Real, Probably Fake, and Probably Real—better reflect real-world misinformation challenges than a simple Real/Fake split. This classification helps the model understand varying levels of credibility, making it more effective at identifying not just clear falsehoods but also content with ambiguity. This approach supports more accurate and practical misinformation detection for real-world combat related applications.
+
+[Data Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
 
 
 ## Project Structure
-The main branch hosts the **Streamlit** application, organized in the following file structure:
 
-```plaintext
-multimodal-fake-news-detection/
-├── backend/
-│   ├── model.py              # Model architecture and training scripts
-│   ├── utils.py              # Utility functions for data preprocessing and model evaluation
-│   ├── requirements.txt      # Dependencies for backend
-│   └── train.py              # Script to train the model
-├── frontend/
-│   ├── app.py                # Streamlit application for user interaction
-│   ├── static/               # Static files (images, CSS, etc.)
-│   └── templates/            # HTML templates for rendering output
-└── README.md                 # Project documentation
-```
+- **src/**: Contains the utility functions, training scripts, and dependencies required to run the final model.
+- **frontend/**: Contains the Streamlit application that allows users to interact with the model and view results.
+- **baseline models/**: These are the two best models we trained, out of which baseline 1 is the better.
 
-## Baseline Model
+## How the Baseline_Code1 Works 
 
-**Baseline_Code1** offers the best performance:
-- **Text Encoder**: Processes textual data with the DeBERTaV3 model.
-- **Image Encoder**: Employs DenseNet-121 for feature extraction from images.
-- **Multimodal Fusion**: Integrates features from text and images via a Transformer model.
-- **Deepfake Detection**: Detects manipulated video content using advanced techniques.
+1. **Frontend**: Users provide inputs through a user-friendly Streamlit interface, uploading media content (text, images, audio, or video) for analysis.
+2. **Backend Model**: The provided inputs are processed by our trained models:
+   - **Text Encoder**: Utilizes the DeBERTaV3 model to process textual data, capturing nuances in language and sentiment.
+   - **Image Encoder**: Implements DenseNet-121 for robust feature extraction from images, identifying relevant visual cues.
+   - **Multimodal Fusion**: Combines features from both text and images using a Transformer model, enhancing the model's ability to understand context.
+   - **Deepfake Detection**: An additional module that employs advanced techniques to identify manipulated video content.
+   Additionally, we have functionalities to extract text and images from videos and identify their Realness by passing them to the above models/Encoders. This is a future scope that can be worked on further.
+3. **Output Rendering**: The results are returned to the main page, providing users with insights on the likelihood of misinformation, contextual explanations, and confidence scores.
 
-The Baseline_Code1 model has achieved a high accuracy of 70.77%—the highest compared to other models on the same dataset. More details on model comparison are available in the following [paper](https://ceur-ws.org/Vol-3473/paper33.pdf).
+## Training
 
-## Running the Project
-
-### 1. Clone the Repository
+To train the model, execute the following commands in your terminal:
 
 ```bash
-git clone <repository-url>
-cd multimodal-fake-news-detection
-```
-
-### 2. Install Dependencies
-
-Navigate to the backend directory and install the required Python packages:
-
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
-### 3. Run the Streamlit Application
-
-Launch the Streamlit application to access the prototype:
-
-```bash
-streamlit run frontend/app.py
-```
-
-The application will be accessible in your browser at `http://localhost:8501`.
-
-
-```bash
+pip install -r backend/requirements.txt
 python backend/train.py
 ```
 
+- Adjust parameters in `train.py` to modify training epochs, batch size, and learning rates based on your system’s capabilities.
+
 ## Evaluation
 
-Model evaluation is performed using metrics such as accuracy, F1 score, precision, and recall. Logs and reports are generated during training to monitor the model’s effectiveness across different classes.
+The model's performance is evaluated using various metrics, including accuracy, F1 score, precision, and recall. Detailed training logs and evaluation reports will be generated during the training process. Comprehensive classification reports are also available to assess the effectiveness of the model across different classes.
 
-## Future Work
+The Baseline_Code1 Model has reached a high accuracy of 70.77% which is the best compared to models released across the internet trained on the same dataset. The below link compares the best models trained on this dataset.
+[Data Source](https://ceur-ws.org/Vol-3473/paper33.pdf)
 
-- **Expanded Modalities**: Enhance support for audio and video analysis.
-- **Real-time Detection**: Implement real-time misinformation detection via live social media feeds.
-- **User Feedback**: Add a feedback system to improve model accuracy through user contributions.
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements, new features, or wish to report issues, please open an issue or submit a pull request. We encourage collaborative efforts to enhance the project's capabilities and reach.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contributing
+## Future Work
 
-Contributions are encouraged! Open an issue or submit a pull request to propose new features, suggest improvements, or report issues.
+- **Integration of Additional Modalities**: Expand capabilities to include audio and video analysis more comprehensively.
+- **Real-time Detection**: Implement mechanisms for real-time misinformation detection using live feeds from social media platforms.
+- **User Feedback Mechanism**: Incorporate a user feedback system to continuously improve model accuracy based on community input.
