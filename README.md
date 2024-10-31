@@ -27,14 +27,7 @@ Click the below link to view our model documentation
 [Documentation of the model](https://docs.google.com/document/d/13h27LtKl0stQLokG4fonuRGf5_FaCZkqmhU0ubFqnp8/edit?usp=sharing)
 
 ## Project Structure
-
-The project repository consists of two main branches:
-
-### Main Branch
-The main branch contains all trained models and scripts for building and refining the model architecture.
-
-### Structured Branch
-The `Structured` branch hosts the **Streamlit** application, organized in the following file structure:
+The main branch hosts the **Streamlit** application, organized in the following file structure:
 
 ```plaintext
 multimodal-fake-news-detection/
