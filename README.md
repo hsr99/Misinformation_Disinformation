@@ -21,6 +21,10 @@ The **MULTI-Fake-DetectiVE** dataset is specially curated to detect fake news an
 
 [Dataset Source](https://sites.google.com/unipi.it/multi-fake-detective/data?authuser=0)
 
+## Model Documentation
+Click the below link to view our model documentation
+[Documentation of the model](https://docs.google.com/document/d/13h27LtKl0stQLokG4fonuRGf5_FaCZkqmhU0ubFqnp8/edit?usp=sharing)
+
 ## Project Structure
 
 The project repository consists of two main branches:
