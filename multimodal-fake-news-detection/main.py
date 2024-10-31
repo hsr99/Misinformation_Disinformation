@@ -4,6 +4,7 @@ from backend.face_extraction import extract_faces_from_video
 from backend.deepfake_model import create_bnn_model
 from backend.utils import preprocess_video_frames
 from config.settings import VIDEO_PATH
+import numpy as np
 
 def run_pipeline(video_path):
     print("Extracting text from video...")
