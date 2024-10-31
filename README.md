@@ -26,17 +26,35 @@ The **MULTI-Fake-DetectiVE** dataset is specially curated to detect fake news an
 The main branch hosts the **Streamlit** application, organized in the following file structure:
 
 ```plaintext
+baseline_models/
+├── Test_video.mp4                  # Sample test video for baseline model testing
+├── people.mp4                      # Additional video file for testing or model input
+├── face_extract.py                 # Script for extracting faces from video content
+├── baseline1/                      # Directory for the first baseline model
+│   └── Baseline_Code1.ipynb        # Notebook implementing the first baseline model
+└──baseline2/                      # Directory for the second baseline model
+    └── BaseLine2.ipynb             # Notebook implementing the second baseline model
+
+config/
+└── settings.py                     # Python-based settings for easy access to configuration variables
+
 multimodal-fake-news-detection/
 ├── backend/
-│   ├── model.py              # Model architecture and training scripts
-│   ├── utils.py              # Utility functions for data preprocessing and model evaluation
-│   ├── requirements.txt      # Dependencies for backend
-│   └── train.py              # Script to train the model
+│   ├── multimodal_model.py         # Model architecture and training scripts for multimodal processing
+│   ├── utils.py                    # Utility functions for data preprocessing and model evaluation
+│   ├── requirements.txt            # Dependencies for backend
+│   ├── Video_to_text.py            # Script for converting video content to text
+│   ├── videos_images_to_text.py    # Extracts text from both video frames and images
+│   ├── deepfake_model.py           # Model or methods for detecting deepfakes
+│   ├── face_extraction.py          # Extracts faces from video/image data
+│   ├── text_extraction.py          # Handles text extraction processes
+│   ├── train.py                    # Script for training the multimodal model
 ├── frontend/
-│   ├── app.py                # Streamlit application for user interaction
-│   ├── static/               # Static files (images, CSS, etc.)
-│   └── templates/            # HTML templates for rendering output
-└── README.md                 # Project documentation
+│   ├── app.py                      # Streamlit application for user interaction
+└── main.py                         # Entry point for running the entire Streamlit application
+
+README.md                       # Project overview, setup instructions, and documentation
+
 ```
 
 ## Baseline Model
