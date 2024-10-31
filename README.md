@@ -23,7 +23,7 @@ The **MULTI-Fake-DetectiVE** dataset is specially curated to detect fake news an
 
 
 ## Project Structure
-The main branch hosts the **Streamlit** application, organized in the following file structure:
+The Structured branch hosts the **Streamlit** application, organized in the following file structure:
 
 ```plaintext
 baseline_models/
