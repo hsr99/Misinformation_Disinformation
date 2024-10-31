@@ -56,7 +56,7 @@ multimodal-fake-news-detection/
 └── main.py                         # Entry point for running the entire Streamlit application
 
 README.md                       # Project overview, setup instructions, and documentation
-
+```
 ## How the Baseline_Code1 Works 
 
 1. **Frontend**: Users provide inputs through a user-friendly Streamlit interface, uploading media content (text, images, audio, or video) for analysis.
