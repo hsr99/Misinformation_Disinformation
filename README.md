@@ -44,7 +44,7 @@ The Baseline_Code1 model has achieved a high accuracy of 70.77%—the highest co
 ### 1. Clone the Repository
 
 ```bash
-git clone <[repository-url](https://github.com/hsr99/Misinformation_Disinformation.git)>
+git clone [repository-url](https://github.com/hsr99/Misinformation_Disinformation.git)
 cd multimodal-fake-news-detection
 ```
 
