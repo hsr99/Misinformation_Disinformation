@@ -47,14 +47,14 @@ multimodal-fake-news-detection/
 - **Multimodal Fusion**: Integrates features from text and images via a Transformer model.
 - **Deepfake Detection**: Detects manipulated video content using advanced techniques.
 
-The Baseline_Code1 model has achieved a high accuracy of 70.77%—the highest compared to other models on the same dataset. More details on model comparison are available in the following [paper](https://ceur-ws.org/Vol-3473/paper33.pdf).
+The Baseline_Code1 model has achieved a high accuracy of 70.77%—the highest compared to other models on the same dataset. Page 5 of the following [paper](https://ceur-ws.org/Vol-3473/paper33.pdf) provides more details on model comparison.
 
 ## Running the Project
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone <[repository-url](https://github.com/hsr99/Misinformation_Disinformation.git)>
 cd multimodal-fake-news-detection
 ```
 
