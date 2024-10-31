@@ -83,9 +83,6 @@ streamlit run frontend/app.py
 
 The application will be accessible in your browser at `http://localhost:8501`.
 
-## Training the Model
-
-To retrain the model, adjust parameters (epochs, batch size, learning rate) in `train.py` and run:
 
 ```bash
 python backend/train.py
